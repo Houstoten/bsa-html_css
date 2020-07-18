@@ -1,0 +1,156 @@
+$main-backcolor: #d7d7d74d
+$main-color: #ffffffed
+%align-inner_center
+    display: flex
+    justify-content: center
+    align-items: center
+
+i:hover
+    color: white
+
+a
+    text-decoration: none
+    color: #121212
+    
+*
+    box-sizing: border-box;
+
+body
+    background-color: $main-backcolor
+    margin: 0
+    font-family: 'Quicksand', sans-serif
+    font-weight: bold
+    color: #ffffffed
+    font-size: 1.1rem
+
+@keyframes fadein 
+    from
+        transform: translate(0, -100%);
+    to
+        transform: translate(0, 0);
+    
+@-moz-keyframes fadein 
+    from
+        transform: translate(0, -100%);
+    to
+        transform: translate(0, 0);
+    
+
+@-webkit-keyframes fadein 
+    from
+        transform: translate(0, -100%);
+    to
+        transform: translate(0, 0);
+
+@-o-keyframes fadein
+    from
+        transform: translate(0, -100%);
+    to
+        transform: translate(0, 0);
+
+
+.header_container
+    animation: fadein 1.5s
+    -moz-animation: fadein 1.5s
+    -webkit-animation: fadein 1.5s
+    -o-animation: fadein 1.5s
+    position: sticky
+    display: flex
+    justify-content: space-between
+    height: 50px
+    background-color: white
+    transition: box-shadow 0.3s ease-in-out
+    padding: 5px 10%
+    position: relative
+
+    &:hover
+        -webkit-box-shadow: 0px 0px 44px -16px rgba(0,0,0,0.75)
+        -moz-box-shadow: 0px 0px 44px -16px rgba(0,0,0,0.75)
+        box-shadow: 0px 0px 44px -16px rgba(0,0,0,0.75)
+    
+    .header_logo
+
+        img
+            height: -webkit-fill-available
+    
+    .header_menu
+        display: flex
+
+        .fa-bell
+            @extend %align-inner_center
+            color: #b0b0b5
+            cursor: pointer
+            margin-right: 20px
+            &:hover
+                color: #999999
+
+        .block_rounded
+            @extend %align-inner_center
+            width: 40px
+            height: 100%
+            border-radius: 50%
+            background-color: #ffa500c7
+            cursor: pointer
+            user-select: none
+            transition: all 0.3s ease-in-out
+            overflow: hidden
+
+            &:after
+                content: ""
+                opacity: 0
+
+#dropdown_checkbox
+    display: none
+
+    &:not(:checked) ~ .block_rounded:hover
+        width: 150px
+        border-radius: 0
+        font-weight: 500
+        &:after
+            content: " van Husarov"
+            color: white
+            opacity: 1
+            transition: opacity 0.6s ease-in-out;
+            -webkit-transition: opacity 0.6s ease-in-out;
+            -moz-transition: opacity 0.6s ease-in-out;
+            -o-transition: opacity 0.6s ease-in-out;
+
+
+    &:checked ~ ul.header_submenu
+        transform: scale(1)
+        opacity: 1
+        transition: all 0.5s ease-in-out;
+
+.header_submenu
+    font-size: 0.95rem
+    font-weight: 500
+    padding: 0
+    opacity: 0
+    overflow: hidden
+    list-style-type: none
+    background: white
+    box-shadow: 0 0 1px rgba(0,0,0,.3)
+    transition: all 0.5s ease-in-out
+    position: absolute
+    transform-origin: top
+    transform: scale(0)
+    width: 170px
+    top: 32.5px
+    right: 10%
+    padding: 12px;
+
+    .submenu_username
+        color: #b0b0b5;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 1.25px solid #b0b0b5;
+        margin-bottom: 5px
+
+    li
+        a
+            display: block;
+            padding: 12px;
+            &:hover
+                background-color: #e4e4e4
+            .fas
+                padding-right: 10px

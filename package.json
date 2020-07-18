@@ -1,0 +1,22 @@
+{
+  "name": "bsa-html_css",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1"
+  },
+  "scripts": {
+    "build": "gulp compile",
+    "watch": "gulp watch"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://husarov_ivan@bitbucket.org/husarov_ivan/bsa-html_css.git"
+  },
+  "author": "Ivan Husarov",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/husarov_ivan/bsa-html_css#readme"
+}
