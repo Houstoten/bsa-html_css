@@ -1,0 +1,39 @@
+.notifications-container
+    position: fixed
+    bottom: 0
+    right: 0
+    margin-bottom: 3%
+    margin-right: 3%
+    display: grid
+    grid-gap: 10px
+    
+
+.notification
+    display: flex;
+    align-items: center;
+    width: 200px;
+    font-size: 0.9rem;
+    padding: 10px 15px
+    border-radius: 5px
+    cursor: pointer
+    user-select: none
+    opacity: 0.8
+
+    .body
+        font-weight: 400
+
+    .fas
+        padding-right: 10px
+        font-size: 1.3rem
+
+    &-ok
+        background-color: green
+
+    &-warn
+        background-color: #ecb937
+
+    &-err
+        background-color: red
+
+    &-pony
+        background-color: purple

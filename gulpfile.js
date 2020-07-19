@@ -6,8 +6,8 @@ var gulp = require('gulp'),
 sass.compiler = require('node-sass');
 
 function sassCompile() {
-  return gulp.src('./main/sass/**/*.sass')
-    .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
+  return gulp.src('./main/sass/style.sass')
+    .pipe(sass.sync({ outputStyle: 'extended' }).on('error', sass.logError))
     .pipe(gulp.dest('./main/css'));
 }
 

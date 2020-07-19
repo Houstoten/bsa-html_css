@@ -1,0 +1,362 @@
+$main-backcolor: #d7d7d74d
+$main-color: #ffffffed
+%align-inner_center
+    display: flex
+    justify-content: center
+    align-items: center
+
+%blue_a_button
+    background-color: #2d99ff
+    padding: 10px 25px
+    color: white
+
+%make_shadow_on_hover
+    transition: opacity 0.3s ease-in
+    &:hover
+        background-color: #2382db
+        
+body
+    position: relative;
+    margin: 0;
+    min-height: 90vh;
+    background-color: $main-backcolor
+    font-family: 'Quicksand', sans-serif
+    font-weight: bold
+    color: #ffffffed
+    font-size: 1.1rem
+
+.body_container
+    margin: 80px 10% 0
+    height: 40vw
+    display: grid
+    grid-template: repeat(8, 1fr)/repeat(16, 1fr);
+.card
+    &-join_bsa
+        grid-row: 1/5
+        grid-column: 1/5
+        background-color: transparent;
+        perspective: 1000px;
+
+        &:hover .wrp
+            transform: rotateY(180deg);
+
+        .wrp
+            height: 100%
+            position: relative
+            transition: all 0.8s;
+            transform-style: preserve-3d;
+            background-color: transparent
+
+            &-front, &-back
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden; 
+                backface-visibility: hidden;
+                @extend %align-inner_center
+
+            &-front
+                background-color: #fff
+                height: 100%         
+       
+            &-back
+                padding: 5%
+                background-color: white
+                transform: rotateY(180deg);
+                font-size: 0.8rem
+
+                .btn-overlay
+                    height: auto
+                    background-color: #121212
+                    @extend %align-inner_center
+
+                a
+                    @extend %blue_a_button
+                    @extend %make_shadow_on_hover
+    
+    &-QA
+        grid-row: 5/9
+        grid-column: 1/5
+        color: white
+        background-color: transparent;
+        perspective: 1000px;
+
+        &:hover .wrp
+            transform: rotateY(180deg);
+
+        .wrp
+            height: 100%
+            position: relative
+            transition: all 0.8s;
+            transform-style: preserve-3d;
+            background-color: transparent
+
+            &-front, &-back
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden; 
+                backface-visibility: hidden;
+
+            &-front
+                background-color: #52bf77
+                font-size: -webkit-xxx-large
+                perspective: 3.5em;
+                font-weight: 400;
+                font-size: 4rem
+                @extend %align-inner_center
+
+            &-back
+                padding: 5%
+                background-color: white
+                transform: rotateY(180deg);
+                font-size: 1.1rem
+                overflow: auto
+                color: #000
+
+    &-JS
+        grid-row: 1/7
+        grid-column: 5/8
+        color: #121212
+        background-color: transparent;
+        perspective: 1000px;
+        
+        &:hover .wrp
+            transform: rotateY(180deg);
+
+        .wrp
+            height: 100%
+            @extend %align-inner_center
+            position: relative
+            transition: all 0.8s;
+            transform-style: preserve-3d;
+            background-color: transparent
+
+            &-front, &-back
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden; 
+                backface-visibility: hidden;
+
+            &-front
+                background-color: #f7cf69
+                font-size: 4rem
+                perspective: 3.5em;
+
+            &-back
+                padding: 5%
+                background-color: white
+                transform: rotateY(180deg);
+                font-size: 1.1rem
+                overflow: auto
+
+            .front-text
+                position: absolute
+                right: 0
+                bottom: 0
+                margin-right: 5%
+                margin-bottom: 5%
+
+    &-Java
+        grid-row: 7/9
+        grid-column: 5/8
+        color: white
+        position: relative
+        .card-inner
+            position: absolute
+            width: 100%
+            height: 100%
+            font-size: 1.1rem
+            color: #121212
+            overflow: auto
+            padding: 5%
+            background-color: #fff
+        .wrp
+            font-weight: 400;
+            font-size: 2rem
+            background-color: #e12b4c
+            height: 100%
+            width: 100%
+            position: absolute
+            @extend %align-inner_center
+            transform-origin: bottom
+            transform: scaleY(1)
+            transition: all 0.4s ease-in-out;
+
+        &:hover .wrp
+            transform: scaleY(0)
+    
+    &-PHP
+        grid-row: 1/4
+        grid-column: 8/17
+        color: #121212
+        background-color: transparent
+        position: relative
+        .card-inner
+            position: absolute
+            width: 100%
+            height: 100%
+            font-size: 1.1rem
+            color: #121212
+            overflow: auto
+            padding: 3%
+            background-color: #fff
+        .wrp
+            font-weight: 400;
+            font-style: italic;
+            font-size: 4rem;
+            background-color: #8893c0
+            height: 100%
+            width: 100%
+            position: absolute
+            @extend %align-inner_center
+            transform-origin: top right
+            transform: scale(1)
+            transition: all 0.4s ease-in-out;
+
+        &:hover .wrp
+            transform: scale(0)
+
+    &-dotNet
+        grid-row: 4/9
+        grid-column: 8/13
+        color: white
+        background-color: transparent
+        position: relative
+        .card-inner
+            position: absolute
+            width: 100%
+            height: 100%
+            font-size: 1.1rem
+            color: #121212
+            overflow: auto
+            padding: 5%
+            background-color: #fff
+        .wrp
+            font-weight: 400;
+            font-size: 4rem;
+            background-color: #642077
+            height: 100%
+            width: 100%
+            position: absolute
+            @extend %align-inner_center
+            transform-origin: bottom right
+            transform: scale(1)
+            transition: all 0.4s ease-in-out;
+
+        &:hover .wrp
+            transform: scale(0)
+
+    &-Events
+        grid-row: 4/6
+        grid-column: 13/17
+        color: white
+        background-color: transparent
+        position: relative
+        overflow: hidden
+
+        .card-inner
+            position: absolute
+            width: 100%
+            height: 100%
+            font-size: 1.1rem
+            color: #121212
+            overflow: auto
+            padding: 5%
+            background-color: #fff
+            a
+                color: #0443a3
+                &:hover
+                    color: #00265f
+        .wrp
+            background-color: #2d99ff
+            height: 100%
+            width: 100%
+            position: absolute
+            @extend %align-inner_center
+            transform-origin: 0% 0%;
+            transform: translate(0, 0);
+            transition: all 0.4s ease-in-out;
+
+        &:hover .wrp
+            transform: translate(100%, 0);
+
+    &-Blog
+        grid-row: 6/8
+        grid-column: 13/17
+        color: white
+        background-color: transparent
+        position: relative
+        overflow: hidden
+        .card-inner
+            position: absolute
+            width: 100%
+            height: 100%
+            font-size: 1.1rem
+            color: #121212
+            overflow: auto
+            padding: 5%
+            background-color: #fff
+            a
+                color: #0443a3
+                &:hover
+                    color: #00265f
+
+        .wrp
+            background-color: #0443a3
+            height: 100%
+            width: 100%
+            position: absolute
+            @extend %align-inner_center
+            transform-origin: 0% 0%;
+            transform: translate(0, 0);
+            transition: all 0.4s ease-in-out;
+
+        &:hover .wrp
+            transform: translate(100%, 0);
+
+    &-Contacts
+        grid-row: 8/9
+        grid-column: 13/17
+        color: white
+        background-color: transparent
+        position: relative
+        overflow: hidden
+        .card-inner
+            position: absolute
+            width: 100%
+            height: 100%
+            font-size: 1.8rem
+            color: #121212
+            overflow: auto
+            background-color: #fff
+            @extend %align-inner_center
+            justify-content: space-evenly
+            padding: 0 10%
+
+            .fa-facebook-square:hover
+                color: #0443a3
+
+            .fa-telegram:hover
+                color: #2d99ff
+
+            .fa-instagram:hover
+                background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+                background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+                background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+        .wrp
+            background-color: #00265f
+            height: 100%
+            width: 100%
+            position: absolute
+            @extend %align-inner_center
+            transform-origin: 0% 0%;
+            transform: translate(0, 0);
+            transition: all 0.4s ease-in-out;
+
+        &:hover .wrp
+            transform: translate(100%, 0);
