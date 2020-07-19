@@ -16,18 +16,20 @@
   border-radius: 5px;
   cursor: pointer;
   user-select: none;
-  opacity: 0.8; }
+  opacity: 0.95; }
+  .notification:hover {
+    opacity: 1; }
   .notification .body {
     font-weight: 400; }
   .notification .fas {
     padding-right: 10px;
     font-size: 1.3rem; }
   .notification-ok {
-    background-color: green; }
+    background-color: #77b676; }
   .notification-warn {
     background-color: #ecb937; }
   .notification-err {
-    background-color: red; }
+    background-color: #cc615a; }
   .notification-pony {
     background-color: purple; }
 
