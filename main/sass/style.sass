@@ -23,30 +23,30 @@ body
     color: #ffffffed
     font-size: 1.1rem
 
-@keyframes fadein 
-    from
-        transform: translate(0, -100%);
-    to
-        transform: translate(0, 0);
+// @keyframes fadein //todo uncomment and compile
+//     from
+//         transform: translate(0, -100%);
+//     to
+//         transform: translate(0, 0);
     
-@-moz-keyframes fadein 
-    from
-        transform: translate(0, -100%);
-    to
-        transform: translate(0, 0);
+// @-moz-keyframes fadein 
+//     from
+//         transform: translate(0, -100%);
+//     to
+//         transform: translate(0, 0);
     
 
-@-webkit-keyframes fadein 
-    from
-        transform: translate(0, -100%);
-    to
-        transform: translate(0, 0);
+// @-webkit-keyframes fadein 
+//     from
+//         transform: translate(0, -100%);
+//     to
+//         transform: translate(0, 0);
 
-@-o-keyframes fadein
-    from
-        transform: translate(0, -100%);
-    to
-        transform: translate(0, 0);
+// @-o-keyframes fadein
+//     from
+//         transform: translate(0, -100%);
+//     to
+//         transform: translate(0, 0);
 
 
 .header_container
@@ -54,14 +54,17 @@ body
     -moz-animation: fadein 1.5s
     -webkit-animation: fadein 1.5s
     -o-animation: fadein 1.5s
-    position: sticky
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    z-index: 100
     display: flex
     justify-content: space-between
     height: 50px
     background-color: white
     transition: box-shadow 0.3s ease-in-out
-    padding: 5px 10%
-    position: relative
+    padding: 5px 10%//todo fix position fixed
 
     &:hover
         -webkit-box-shadow: 0px 0px 44px -16px rgba(0,0,0,0.75)
@@ -154,3 +157,124 @@ body
                 background-color: #e4e4e4
             .fas
                 padding-right: 10px
+
+.body_container
+    margin: 80px 10% 0
+    height: 40vw
+    background-color: #fff
+    display: grid
+    //grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    // grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+    grid-auto-flow: row dense;
+
+.card
+    &-join_bsa
+        grid-row: 1/5
+        grid-column: 1/5
+        .wrp
+            height: 100%
+            @extend %align-inner_center
+    
+    &-QA
+        grid-row: 5/9
+        grid-column: 1/5
+        color: white
+        background-color: #52bf77
+        .wrp
+            height: 100%
+            @extend %align-inner_center
+
+    &-JS
+        grid-row: 1/7
+        grid-column: 5/8
+        color: black
+
+        &:hover .wrp
+            transform: rotateY(180deg);
+
+        .wrp
+            height: 100%
+            @extend %align-inner_center
+            position: relative
+            transition: all 0.8s;
+            transform-style: preserve-3d;
+
+            &-front, &-back
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden; /* Safari */
+                backface-visibility: hidden;
+
+            &-front
+                background-color: #f7cf69
+                font-size: -webkit-xxx-large
+
+            &-back
+                padding: 5%
+                background-color: white
+                transform: rotateY(180deg);
+                font-size: 0.8rem
+                overflow: hidden
+
+            .front-text
+                position: absolute
+                right: 0
+                bottom: 0
+                margin-right: 5%
+                margin-bottom: 5%
+
+    &-Java
+        grid-row: 7/9
+        grid-column: 5/8
+        color: white
+        background-color: #e12b4c
+        .wrp
+            height: 100%
+            @extend %align-inner_center
+    
+    &-PHP
+        grid-row: 1/4
+        grid-column: 8/17
+        color: black
+        background-color: #8893c0
+        .wrp
+            height: 100%
+            @extend %align-inner_center
+
+    &-dotNet
+        grid-row: 4/9
+        grid-column: 8/13
+        color: white
+        background-color: #642077
+        .wrp
+            height: 100%
+            @extend %align-inner_center
+
+    &-Events
+        grid-row: 4/6
+        grid-column: 13/17
+        color: white
+        background-color: #2d99ff
+        .wrp
+            height: 100%
+            @extend %align-inner_center
+
+    &-Blog
+        grid-row: 6/8
+        grid-column: 13/17
+        color: white
+        background-color: #0443a3
+        .wrp
+            height: 100%
+            @extend %align-inner_center
+
+    &-Contacts
+        grid-row: 8/9
+        grid-column: 13/17
+        color: white
+        background-color: #00265f
+        .wrp
+            height: 100%
+            @extend %align-inner_center
+
